@@ -1,0 +1,13 @@
+<%- include('../../layouts/header')%>
+<%- include('../../layouts/menu')%>
+    <section class="section">
+        <div class="container">
+        <% if(type == "category"){ %>
+            <h1 class="title size-4">Nova Categoria</h1>
+        <%} else { %>
+            <h1 class="title size-4">Nova Produto</h1>
+            <%}%>
+            <%- include('../../layouts/form') %>
+        </div>
+    </section>
+<%-include('../../layouts/footer')%>

@@ -1,0 +1,33 @@
+<div class="columns is-multiline">
+    <% categories.forEach((category)=>{ %>
+        <div class="column is-one-quarter">
+        <div class="card has-background-white-ter">
+            <div class="card-content">
+            <p class="subtitle is-size-5">
+                <%= category.name%>
+            </p>
+            <p class="subtitle is-size-6">
+                <%= category.products.length %>
+            </p>
+            </div>
+            <footer class="card-footer">
+            <p class="card-footer-item">
+                <span>
+                <a href="/category/show/<%= category.id %>">Ver</a>
+                </span>
+            </p>
+            <p class="card-footer-item">
+                <span>
+                <a href="/category/edit/<%= category._id %>">Editar</a>
+                </span>
+            </p>
+            <p class="card-footer-item">
+                <span>
+                <a href="/category/<%= category.id %>/?_method=delete" class="has-text-danger">Remover</a>
+                </span>
+            </p>
+            </footer>
+        </div>
+        </div>
+    <% }) %>
+  </div>

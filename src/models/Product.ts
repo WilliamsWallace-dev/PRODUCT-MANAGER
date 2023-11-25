@@ -5,6 +5,7 @@ export interface Product {
   id: number
   name: string
   amount: number
+  category_id : number
 }
 
 export interface ProductCreationAttributes extends Optional<Product,'id'> {}
@@ -22,12 +23,21 @@ export const Product = database.define<ProductInstance, Product>('products', {
       },
       name : {
         allowNull : false,
-        unique : true,
-        type : DataTypes.STRING
+        type : DataTypes.STRING,
+        validate: {
+          notNull: { msg: "foo is required" },
+        },
       },
       amount : {
         type : DataTypes.INTEGER,
         allowNull : false,
       },
+      category_id : {
+        allowNull : false,
+        type : DataTypes.INTEGER,
+        references : {model : 'categories', key : 'id'},
+        onUpdate : 'CASCADE',
+        onDelete : 'RESTRICT'
+    },
   })
 

@@ -3,8 +3,8 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('products',{
-      id : {
+    await queryInterface.createTable('categories',{
+      id:{
         primaryKey : true,
         allowNull : false,
         autoIncrement : true,
@@ -13,27 +13,16 @@ module.exports = {
       name : {
         allowNull : false,
         unique : true,
-        type : Sequelize.DataTypes.STRING,
+        type : Sequelize.DataTypes.STRING ,
         validate: {
-          notNull: { msg: "foo is required" },
+          notNull: { msg: "name is required" },
         },
       },
-      amount : {
-        type : Sequelize.DataTypes.INTEGER,
-        allowNull : false,
-      },
-      category_id : {
-          allowNull : false,
-          type : Sequelize.DataTypes.INTEGER,
-          references : {model : 'categories', key : 'id'},
-          onUpdate : 'CASCADE',
-          onDelete : 'RESTRICT'
-      },
-      created_at : {
+      created_at:{
         allowNull : false,
         type : Sequelize.DataTypes.DATE
       },
-      updated_at : {
+      updated_at:{
         allowNull : false,
         type : Sequelize.DataTypes.DATE
       }
@@ -41,6 +30,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('products')
+
   }
 };

@@ -1,0 +1,31 @@
+<%- include('../../layouts/header') %>
+<%- include('../../layouts/menu') %>
+<section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-four-fifths">
+          <h1 class="title size-4">Lista : <%= category.name%></h1>
+        </div>
+        <div class="column is-one-fifth">
+          <a href="/category/<%=category.id%>/product/new" class="button is-success is-small">Nova Tarefa</a>
+          <a href="/showCategories" class="button is-small">Voltar</a>
+        </div>
+      </div>
+
+      <hr />
+      <% if(category.products.length > 0 ) { category.products.forEach((product)=>{%>
+      <div class="columns">
+          <p><%= product.name%></p>
+        </div>
+
+        <div class="column is-one-fifth">
+          <a href="/product/<%=product.id%>?_method=delete" class="button is-danger is-small">Remover</a>
+        </div>
+      </div>
+      <%})}else { %>
+      <p>Nenhum produto cadatrado</p>
+      <% } %>
+
+    </div>
+  </section>
+<%- include('../../layouts/footer')%>

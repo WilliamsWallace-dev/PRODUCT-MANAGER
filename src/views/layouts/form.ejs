@@ -1,0 +1,27 @@
+<form method = "post" action="<%= url %>"
+    <div class="field">
+        <label for="name">Nome</label>
+        <div class="control" style="margin: 8px 0 ;">
+            <% if(type == "category") { %>
+                <input type="text" class="input" name = "category[name]" placeholder="Categoria de produtos" value = <%=category.name%> >
+            <% } else { %> 
+                    <input type="text" class="input" name = "product[name]" placeholder="Nome do Produto"  value = <%=product.name%> >
+                <%}%>
+            <% if (error) { %>
+                    <p class="is-danger help"><%= error.message %></p>
+                <%}%>
+        </div>
+        
+        <% if(type == "product") { %>
+            <label for="name">Quantidade de produtos</label>
+            <div class="control" style="margin-bottom: 8px ;">
+                <input style="margin-top: 8px ; max-width: 80px;" type="number" class="input" name = "product[amount]" placeholder="-" value = <%=product.amount%> >
+            </div>
+        <% } %>
+        
+        
+
+        <button type="submit" class="button is-success">Salvar</button>
+        <a href="/showCategories" class="button">Cancelar</a>
+    </div>
+</form>

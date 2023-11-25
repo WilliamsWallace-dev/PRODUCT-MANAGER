@@ -2,6 +2,7 @@ import express from 'express'
 import {database} from "../config/sequelize"
 import path from 'path'
 import {router as productController} from './controllers/product'
+import {router as categoryController} from './controllers/category'
 import {router as viewsController} from './controllers/views'
 
 const methodOverride = require('method-override')
@@ -17,7 +18,9 @@ app.set('views', path.join(__dirname,'views'))
 app.set('view engine','ejs')
 
 app.use("/",viewsController)
+app.use("/category",categoryController)
 app.use("/product",productController)
+
 
 
 const PORT = process.env.PORT || 3000
