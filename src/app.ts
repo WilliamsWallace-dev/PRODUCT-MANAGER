@@ -23,11 +23,11 @@ app.use("/product",productRouter)
 
 
 
-const PORT = process.env.PORT || 3000
-app.listen(PORT, ()=>{
-    //O seguinte código irá executar uma query que irá se certificar acerca da conexão com o banco de dados. 
-    database.authenticate().then(()=>{
-        console.log(`DB connection successfuly`)
-    })
-    console.log(`Server started successfuly at the port ${PORT}`)
-})
+// const PORT = process.env.PORT || 3000
+// app.listen(PORT, ()=>{
+//     //O seguinte código irá executar uma query que irá se certificar acerca da conexão com o banco de dados. 
+//     database.authenticate().then(()=>{
+//         console.log(`DB connection successfuly`)
+//     })
+//     console.log(`Server started successfuly at the port ${PORT}`)
+// })
