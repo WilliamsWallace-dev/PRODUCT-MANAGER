@@ -15,11 +15,15 @@ module.exports = {
         unique : true,
         type : Sequelize.DataTypes.STRING,
         validate: {
-          notNull: { msg: "foo is required" },
+          notNull: { msg: "name is required" },
         },
       },
       amount : {
         type : Sequelize.DataTypes.INTEGER,
+        allowNull : false,
+      },
+      price : {
+        type : Sequelize.DataTypes.FLOAT,
         allowNull : false,
       },
       category_id : {

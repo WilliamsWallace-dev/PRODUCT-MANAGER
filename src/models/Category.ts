@@ -21,7 +21,7 @@ export const Category = database.define<CategoryInstance, Category>('categories'
         allowNull : false,
         type : DataTypes.STRING,
         validate: {
-          notNull: { msg: "foo is required" },
+          notNull: { msg: "name is required" },
         },
       }
   })

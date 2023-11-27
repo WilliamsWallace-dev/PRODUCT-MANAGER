@@ -2,10 +2,11 @@ import { DataTypes, Model, Optional } from 'sequelize'
 import { database } from '../../config/sequelize'
 
 export interface Product {
-  id: number
-  name: string
-  amount: number
-  category_id : number
+  id: number,
+  name: string,
+  amount: number,
+  price : number,
+  category_id : number,
 }
 
 export interface ProductCreationAttributes extends Optional<Product,'id'> {}
@@ -25,10 +26,14 @@ export const Product = database.define<ProductInstance, Product>('products', {
         allowNull : false,
         type : DataTypes.STRING,
         validate: {
-          notNull: { msg: "foo is required" },
+          notNull: { msg: "name is required" },
         },
       },
       amount : {
+        type : DataTypes.INTEGER,
+        allowNull : false,
+      },
+      price : {
         type : DataTypes.INTEGER,
         allowNull : false,
       },

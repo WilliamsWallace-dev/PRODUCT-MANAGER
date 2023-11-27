@@ -1,9 +1,9 @@
 import express from 'express'
 import {database} from "../config/sequelize"
 import path from 'path'
-import {router as productController} from './controllers/product'
-import {router as categoryController} from './controllers/category'
-import {router as viewsController} from './controllers/views'
+import {router as productRouter} from './router/productRouter'
+import {router as categoryRouter} from './router/categoryRouter'
+import {router as viewsRouter} from './router/viewsRouter'
 
 const methodOverride = require('method-override')
 
@@ -17,9 +17,9 @@ app.use(methodOverride('_method',{methods : ['POST','GET']}))
 app.set('views', path.join(__dirname,'views'))
 app.set('view engine','ejs')
 
-app.use("/",viewsController)
-app.use("/category",categoryController)
-app.use("/product",productController)
+app.use("/",viewsRouter)
+app.use("/category",categoryRouter)
+app.use("/product",productRouter)
 
 
 
