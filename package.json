@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/app.ts",
-    "build": "npm run sequelize:migrate"
+    "start" : "node app.js",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc && sequelize:migrate"
   },
   "keywords": [],
   "author": "",
