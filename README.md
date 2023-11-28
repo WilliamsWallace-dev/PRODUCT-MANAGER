@@ -35,7 +35,18 @@ Certifique-se de ter o Node.js instalado em sua máquina antes de prosseguir.
 2. **Instale as Dependências:**
    ```bash
    npm install
-3. **Configure o Banco de Dados:**
+3. **Configuração do Banco de Dados:**
+   ```bash
+   NODE_ENV=development
+   PORT=3000
+   
+   # Configurações do PostgreSQL
+   POSTGRES_HOST=localhost
+   POSTGRES_DATABASE=bookstore_development
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=wallace357
+- Certifique-se de adaptar as informações do banco de dados de acordo com a sua configuração específica. As variáveis fornecidas são exemplos e podem não refletir as configurações reais do seu ambiente.
+4. **Criação o Banco de Dados:**
    - Execute os comandos Sequelize para criar o banco de dados e aplicar as migrações:
    ```bash
    npx sequelize-cli db:create
