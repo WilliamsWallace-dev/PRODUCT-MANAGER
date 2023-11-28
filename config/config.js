@@ -1,10 +1,10 @@
 module.exports = {
-      dialect: 'postgres',
-      host: 'localhost',
-      port: '5432',
-      database: 'bookstore_development',
-      username: "postgres",
-      password: "wallace357",
+      development : {
+        url : process.env.POSTGRES_URL+"?sslmode=require"
+      },
+      production : {
+        url : process.env.POSTGRES_URL+"?sslmode=require"
+      }
   }
 
 // import pg from 'pg';
