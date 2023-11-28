@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node app.js",
+    "start": "node app.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc && sequelize:migrate"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "bulma": "^0.9.4",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "method-override": "^3.0.0",

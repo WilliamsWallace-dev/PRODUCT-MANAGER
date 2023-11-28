@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 import express from 'express'
 import {database} from "../config/sequelize"
 import path from 'path'
