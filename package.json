@@ -2,9 +2,9 @@
   "name": "hackathon",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node src/server.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc && sequelize:migrate"
   },
